@@ -3,11 +3,11 @@ JS pseudocode:
 0. Examine the JSON response from the Autocomplete API (Paste the URL in a tab).
 -identify how you will grab the data from here.
 -identify how you will do callback=? for JSONP, use ('cb') 
-ISSUE: cb != callback and we need to see how jQuery can handle this (custom callback parameter)
+not anymore of an ISSUE: cb != callback and we need to see how jQuery can handle this (custom callback parameter)
 
 
 1. On click of button:
-	a) get the string typed in ny the user
+	a) get the string typed in by the user
 	(Alert/Console.log it so we can make sure our variable has the data). 
 	b) Get JSON results of cities -> data.
 		i) on success of that, capture the data in a variable (again, console.log it to see if b4 you move on. This is a good opp to examine the data in Chrome Console.)
