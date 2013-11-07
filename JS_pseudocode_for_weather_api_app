@@ -7,6 +7,7 @@ not anymore of an ISSUE: cb != callback and we need to see how jQuery can handle
 
 
 1. On click of button:
+	*** create an input field for user!***
 	a) get the string typed in by the user
 	(Alert/Console.log it so we can make sure our variable has the data). 
 	b) Get JSON results of cities -> data.
