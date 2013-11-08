@@ -3,7 +3,7 @@ $(function() {
 	$('#btn-add-item').click( function() {
 	
 		// we're collecting the input value (.val) from  
-		// the user and putting it in the bla
+		// the user and putting it in the (now) variable: bla
 		bla = $('#txt_name').val(); 
 
 		$.getJSON(
@@ -20,42 +20,64 @@ $(function() {
 					var city = cities[i]; 
 					console.log(city);
 
-					var cityName =  '<li>' + city['name'] + '</li>'; 
-					console.log(cityName);
+					var cityLi = '<li data-detail-url="' + city["l"] + '.json">' + city['name'] + '</li>';
+					// cityName = "<li>Toronto</li>"
+					// cityName = "<li data-detail-url="/q/zmw:01040.1.99999">Toronto</li>"
+					$(cityLi).attr('data-detail-url'); 
+					console.log(cityLi);
 
-					$('#list').append(cityName); 
+					$('#list').append(cityLi); 
 
-
-
-
-						
     			}
 			}
 		);
+		
+		
+
 	});
+
+		$('#list').on('click', 'li', function() {
+			var base = "http://api.wunderground.com/api/aee2e00c79507de6/forecast";
+			var data_detail_url = $(this).attr('data-detail-url');
+			console.log(base + data_detail_url); 
+
+			$.ajax({
+				url: base.concat(data_detail_url),
+				dataType: "jsonp",
+				success: function(json) {
+					console.log(json);
+				}
+			});
+
+			// $.getJSON( base + data_detail_url, 
+			// 	function(response) {
+			// 		console.log(response); 
+			// 	}
+			// );
+
+		});
+
+
 }); 
+	
+		//below is Khurram's jsfiddle from class 
+// 	$.getJSON('http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=kdtj8y8bhmde6nb7s68ta325&callback=?',
+//           function(data) {
+//               $.each(data.movies, function (i, movie) {
+//                   var li = $('<li>' + movie.title + '</li>');
+//                   li.attr('data-rotten-id', movie.id);
+//                   $('#movies').append(li);
+//                   console.log(movie);
+//               });
+//           }
+// )   $(this).data("id")
 
-			// var movies = data["movies"]; 
-	  //           var movie = movies[0];
-	  //           for(var i=0; i< movies.length; i++) {
-	  //               var movie = movies[i]; 
-	  //               console.log(movie); 
-	  //               var li = $('<li></li>'); 
-	  //               // alternative: var imageSrc = movie.posters.profile
-	                
-	  //                   var imageSrc = movie['posters']['profile'];                               
-	  //                   var img= $('<img />').attr(
-	  //                       'src', imageSrc
-	  //                   );
-	  //                   li.append(img); 
-	  //                   li.append('<div>'+movie['title']+'</div>');
-	  //                  $('#movies').append(li); 
-         //   }    
-   //      }
-   
-// )
+// $('ul#movies').on('click', 'li', function() {
+//    //var id = $(this).data('rotten-id');
+//    var id = $(this).attr('data-rotten-id');
+//    console.log(id);
+// });
 
-					//$("#txt_name").val(""); 
 				
 
 

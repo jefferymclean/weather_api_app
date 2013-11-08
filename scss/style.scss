@@ -1,34 +1,31 @@
 body {
 	background-color: pink; 
-	margin: 30px; 
-	border: blue solid 4px;
+	margin: 30px;
 	padding: 2px;
 }
 
-h1	{
-	font-family: impact; 
-	font-size: 3.0em; 
-	text-align: left;
-	text-align: center;  
-}
+	h1	{
+		font-family: impact; 
+		font-size: 3.0em; 
+		text-align: left;
+		text-align: center;  
+	}
 
-#navbar-div {
-	text-align: center;
-}
-ul {
-
-}
-	li {
-		font-family: helvetica; 
-		color: blue; 
-		list-style: none; 
-		margin-left: 630px; 
-		margin-bottom: 10px;  
-		padding: 10px; 
-		background-color: #E4E3E8;
-		border-radius: 5px;
-		border: 3px solid #AAA; 
-		width: 10%; 
+	#navbar-div {
 		text-align: center;
+	}
+
+		li {
+			font-family: helvetica; 
+			color: blue; 
+			list-style: none; 
+			margin-left: 630px; 
+			margin-bottom: 10px;  
+			padding: 10px; 
+			background-color: #E4E3E8;
+			border-radius: 5px;
+			border: 3px solid #AAA; 
+			width: 10%; 
+			text-align: center;
 	 
 		}
