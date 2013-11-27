@@ -1,4 +1,4 @@
-$(function() {
+$(function() {			
 
 	$('#btn-add-item').click( function() {
 	
@@ -14,26 +14,21 @@ $(function() {
 					// results is an array (a collection of cities)
 				var cities = data['RESULTS']; 
 				console.log(cities);
-				//var cities = cities[]; 
+					//var cities = cities[]; 
 
 				for (var i=0; i< cities.length; i++) {
 					var city = cities[i]; 
 					console.log(city);
 
 					var cityLi = '<li data-detail-url="' + city["l"] + '.json">' + city['name'] + '</li>';
-					// cityName = "<li>Toronto</li>"
-					// cityName = "<li data-detail-url="/q/zmw:01040.1.99999">Toronto</li>"
 					$(cityLi).attr('data-detail-url'); 
 					console.log(cityLi);
 
 					$('#list').append(cityLi); 
 
-    			}
+    		}
 			}
 		);
-		
-		
-
 	});
 
 		$('#list').on('click', 'li', function() {
@@ -56,8 +51,6 @@ $(function() {
 			// );
 
 		});
-
-
 }); 
 	
 		//below is Khurram's jsfiddle from class 
